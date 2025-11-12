@@ -37,6 +37,11 @@ class CommentingRepository(ProductRepository):
         product.add_comment(comment)
         return product
 
+    def update_by_name(
+        self, nome_antigo: str, novo_produto: Product
+    ) -> Product: # pragma: no cover - unused
+        raise NotImplementedError
+
 
 def test_execute_attaches_comment_to_product() -> None:
     product = Product(nome="Arroz", quantidade=2, valor=10.5, id=1)

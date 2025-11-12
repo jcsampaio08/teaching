@@ -30,6 +30,11 @@ class InMemoryProductRepository(ProductRepository):
     ) -> Product:  # pragma: no cover - unused
         raise NotImplementedError
 
+    def update_by_name(
+        self, nome_antigo: str, novo_produto: Product
+    ) -> Product: # pragma: no cover - unused
+        raise NotImplementedError
+
 
 def test_execute_returns_product_when_found() -> None:
     products = [Product(nome="Arroz", quantidade=2, valor=10.5, id=1)]

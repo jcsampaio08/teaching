@@ -27,6 +27,11 @@ class StubProductRepository(ProductRepository):
         self, product_id: int, comment: Comment
     ) -> Product:  # pragma: no cover - unused
         raise NotImplementedError
+    
+    def update_by_name(
+        self, nome_antigo: str, novo_produto: Product
+    ) -> Product: # pragma: no cover - unused
+        raise NotImplementedError
 
 
 def test_execute_returns_products_from_repository() -> None:

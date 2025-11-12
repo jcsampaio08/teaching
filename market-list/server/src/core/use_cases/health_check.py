@@ -32,11 +32,9 @@ class HealthCheckUseCase(UseCase):
         }
 
     def execute(self) -> Dict[str, object]:
-        timestamp = (
-            self._timestamp_provider().replace(microsecond=0).isoformat()
-        )
-        if not timestamp.endswith("Z"):
-            timestamp = f"{timestamp}Z"
+        dt = self._timestamp_provider().replace(microsecond=0)
+        # Format to ISO 8601 and replace timezone offset with Z
+        timestamp = dt.isoformat().replace("+00:00", "") + "Z"
 
         return {
             "status": "healthy",

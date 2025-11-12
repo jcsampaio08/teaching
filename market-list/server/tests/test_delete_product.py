@@ -31,7 +31,11 @@ class MutableProductRepository(ProductRepository):
         self, product_id: int, comment: Comment
     ) -> Product:  # pragma: no cover - unused
         raise NotImplementedError
-
+    
+    def update_by_name(
+        self, nome_antigo: str, novo_produto: Product
+    ) -> Product: # pragma: no cover - unused
+        raise NotImplementedError
 
 def test_execute_removes_existing_product() -> None:
     repository = MutableProductRepository(

@@ -31,6 +31,9 @@ class InMemoryProductRepository(ProductRepository):
 
     def add_comment(self, product_id: int, comment: Comment) -> Product:
         raise NotImplementedError
+    
+    def update_by_name(self, nome_antigo: str, novo_produto: Product) -> Product:
+        raise NotImplementedError
 
 
 def test_execute_adds_new_product() -> None:
